@@ -9,14 +9,14 @@ http://github.com/robloach/docker-google-appengine
 
 Easily set up and run Google App Engine web applications through Docker, without
 needing to install the Google App Engine SDK, or set up the development
-environment locally. Support for PHP, Go, Java, or any other Google App Engine
+environment locally. Support for Go, PHP, Java, or any other Google App Engine
 SDK runtime available.
 
 
 ## Features
 
 * [Forge](../forge)
-* [Google App Engine SDK for PHP](https://developers.google.com/appengine) 1.9.6
+* [Google App Engine SDK](https://developers.google.com/appengine) 1.9.6
 
 
 ## Usage
@@ -36,11 +36,11 @@ docker build -t robloach/docker-google-appengine robloach/docker-google-appengin
 
 ### Run
 
-Run the image, binding associated ports, and mounting the present working
-directory:
+Run the image, binding associated ports, and mounting the
+application directory:
 
 ```
-docker run -p 8080:8080 -p 8000:8000 -p 222:22 -v $(pwd)/test/php:/app robloach/docker-google-appengine
+docker run -v $(pwd)/test/php:/app -p 8080:8080 -p 8000:8000 -p 222:22 robloach/docker-google-appengine
 ```
 
 
